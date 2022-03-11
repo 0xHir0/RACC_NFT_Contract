@@ -77,7 +77,7 @@ contract RichApeCarClubNFT is ERC721A, Ownable, ReentrancyGuard {
             _safeMint(_to, maxPerAddressDuringMint);
         }
 
-        uint256 numModules = _amount % mintLimit;
+        uint256 numModules = _amount % maxPerAddressDuringMint;
         if (numModules > 0) {
             _safeMint(_to, numModules);
         }
@@ -173,7 +173,7 @@ contract RichApeCarClubNFT is ERC721A, Ownable, ReentrancyGuard {
             _safeMint(msg.sender, maxPerAddressDuringMint);
         }
 
-        uint256 numModules = _amount % mintLimit;
+        uint256 numModules = _amount % maxPerAddressDuringMint;
         if (numModules > 0) {
             _safeMint(msg.sender, numModules);
         }
