@@ -30,11 +30,14 @@ contract RichApeCarClubNFT is ERC721A, Ownable, ReentrancyGuard {
 
     bytes32 private _merkleRoot;
 
-    constructor(uint256 maxBatchSize_, string memory baseURI_)
-        ERC721A("RichApeCarClub", "RACC")
-    {
+    constructor(
+        uint256 maxBatchSize_,
+        string memory baseURI_,
+        string memory notRevealedURI_
+    ) ERC721A("RichApeCarClub", "RACC") {
         maxPerAddressDuringMint = maxBatchSize_;
         baseURI = baseURI_;
+        notRevealedURI = notRevealedURI_;
     }
 
     modifier callerIsUser() {

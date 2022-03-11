@@ -8,7 +8,7 @@ async function main() {
   const RichApeCarClubNFT = await ethers.getContractFactory(
     'RichApeCarClubNFT'
   );
-  const raccNFT = await RichApeCarClubNFT.deploy(5, '');
+  const raccNFT = await RichApeCarClubNFT.deploy(5, '', '');
 
   await raccNFT.deployed();
 
